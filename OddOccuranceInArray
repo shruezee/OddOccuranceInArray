@@ -1,0 +1,14 @@
+public func solution(_ A : inout [Int]) -> Int {
+    var output = A
+    if A.count % 2 == 0 {
+        return 0
+    }
+    for (_,element) in A.enumerated() {
+            for j in 0..<A.count {
+                if element == A[j] && output.count > 1 {
+                    output.removeAll{$0 == element}
+                }
+            }
+    }
+    return output[0] 
+}
